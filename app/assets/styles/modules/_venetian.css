@@ -1,47 +1,20 @@
-/* Global Styling */
-html {
-	-webkit-boz-sizing: border-box;
-	box-sizing: border-box;
-}
-*, *:before, *:after {
-	-webkit-boxsizing: inherit;
-	-ms-box-sizing: inherit;
-	box-sizing: inherit;
-}
-body {
-	margin: 0;
-	padding-top: 0;
-	background: #cd9b9b;
-	font-family: 'Pacifico', cursive;
-}
-h1 {
-	position: absolute;
-	top: 80px;
-	left: 40px;
-	width: 85%;
-	color: rgba(216, 191, 216, 1);
-	letter-spacing: 0.1em;
-	-webkit-transform: transition 0s;
-	        transform: transition 0s;
-	text-shadow: 2px 2px 4px #8b636c;
-}
 /* Venetian Blinds Styling */
 .wrap {
 	max-width: 1000px;
 	width: 100%;
 	margin: 0 auto;
 }
+
 #blinds {
 	margin: 0 auto;
 	position: relative;
-	-webkit-perspective: 1800px;
-	        perspective: 1800px;
-	-webkit-transform-style: preserve-3d;
-	        transform-style: preserve-3d;
+	perspective: 1800px;
+	transform-style: preserve-3d;
 	max-width: 1000px;
 	padding-bottom: 56.5%;
 	min-height: 100vh;
 }
+
 #blinds img {
 	left: 0;
 	top: 0;
@@ -49,191 +22,183 @@ h1 {
 	margin-right: auto;
 	position: absolute;
 	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-ms-transition: 1s;
 	transition: 1s;
 	max-width: 1000px;
 	width: 100%;
 	border: 8px groove #8b636c;
 }
+
 #blinds img.first {
 	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
 	transform: rotateY(0deg);
 }
+
 #blinds img.second {
 	-webkit-transform: rotateY(-180deg) translateZ(1px);
+	-moz-transform: rotateY(-180deg) translateZ(1px);
+	-ms-transform: rotateY(-180deg) translateZ(1px);
 	transform: rotateY(-180deg) translateZ(1px);
 }
+
 #blinds:hover img.first {
 	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
+
 #blinds:hover img.second {
 	-webkit-transform: rotateY(0deg) translateZ(1px);
+	-moz-transform: rotateY(0deg) translateZ(1px);
 	transform: rotateY(0deg) translateZ(1px);
 }
+
 #blinds img:nth-child(1), #blinds img:nth-child(11) {
 	-webkit-clip: rect(0px, 100px, 840px, 0px);
 	-moz-clip: rect(0px, 100px, 840px, 0px);
 	-ms-clip: rect(0px, 100px, 840px, 0px);
 	clip: rect(0px, 100px, 840px, 0px);
 	-webkit-transform-origin: 50px 0px;
+	-moz-transform-origin: 50px 0px;
+	-ms-transform-origin: 50px 0px;
 	transform-origin: 50px 0px;
 }
+
 #blinds img:nth-child(2), #blinds img:nth-child(12) {
 	-webkit-clip: rect(0px, 200px, 840px, 100px);
 	-moz-clip: rect(0px, 200px, 840px, 100px);
 	-ms-clip: rect(0px, 200px, 840px, 100px);
 	clip: rect(0px, 200px, 840px, 100px);
 	-webkit-transform-origin: 150px 0px;
+	-moz-transform-origin: 150px 0px;
+	-ms-transform-origin: 150px 0px;
 	transform-origin: 150px 0px;
 	-webkit-transition-delay: 100ms;
+	-moz-transition-delay: 100ms;
+	-ms-transition-delay: 100ms;
 	transition-delay: 100ms;
 }
+
 #blinds img:nth-child(3), #blinds img:nth-child(13) {
 	-webkit-clip: rect(0px, 300px, 840px, 200px);
 	-moz-clip: rect(0px, 300px, 840px, 200px);
 	-ms-clip: rect(0px, 300px, 840px, 200px);
 	clip: rect(0px, 300px, 840px, 200px);
 	-webkit-transform-origin: 250px 0px;
+	-moz-transform-origin: 250px 0px;
+	-ms-transform-origin: 250px 0px;
 	transform-origin: 250px 0px;
 	-webkit-transition-delay: 200ms;
+	-moz-transition-delay: 200ms;
+	-ms-transition-delay: 200ms;
 	transition-delay: 200ms;
 }
+
 #blinds img:nth-child(4), #blinds img:nth-child(14) {
 	-webkit-clip: rect(0px, 400px, 840px, 300px);
 	-moz-clip: rect(0px, 400px, 840px, 300px);
 	-ms-clip: rect(0px, 400px, 840px, 300px);
 	clip: rect(0px, 400px, 840px, 300px);
 	-webkit-transform-origin: 350px 0px;
+	-moz-transform-origin: 350px 0px;
+	-ms-transform-origin: 350px 0px;
 	transform-origin: 350px 0px;
 	-webkit-transition-delay: 300ms;
+	-moz-transition-delay: 300ms;
+	-ms-transition-delay: 300ms;
 	transition-delay: 300ms;
 }
+
 #blinds img:nth-child(5), #blinds img:nth-child(15) {
 	-webkit-clip: rect(0px, 500px, 840px, 400px);
 	-moz-clip: rect(0px, 500px, 840px, 400px);
 	-ms-clip: rect(0px, 500px, 840px, 400px);
 	clip: rect(0px, 500px, 840px, 400px);
 	-webkit-transform-origin: 450px 0px;
+	-moz-transform-origin: 450px 0px;
+	-ms-transform-origin: 450px 0px;
 	transform-origin: 450px 0px;
 	-webkit-transition-delay: 400ms;
+	-moz-transition-delay: 400ms;
+	-ms-transition-delay: 400ms;
 	transition-delay: 400ms;
 }
+
 #blinds img:nth-child(6), #blinds img:nth-child(16) {
 	-webkit-clip: rect(0px, 600px, 840px, 500px);
 	-moz-clip: rect(0px, 600px, 840px, 500px);
 	-ms-clip: rect(0px, 600px, 840px, 500px);
 	clip: rect(0px, 600px, 840px, 500px);
 	-webkit-transform-origin: 550px 0px;
+	-moz-transform-origin: 550px 0px;
+	-ms-transform-origin: 550px 0px;
 	transform-origin: 550px 0px;
 	-webkit-transition-delay: 500ms;
+	-moz-transition-delay: 500ms;
+	-ms-transition-delay: 500ms;
 	transition-delay: 500ms;
 }
+
 #blinds img:nth-child(7), #blinds img:nth-child(17) {
 	-webkit-clip: rect(0px, 700px, 840px, 600px);
 	-moz-clip: rect(0px, 700px, 840px, 600px);
 	-ms-clip: rect(0px, 700px, 840px, 600px);
 	clip: rect(0px, 700px, 840px, 600px);
 	-webkit-transform-origin: 650px 0px;
+	-moz-transform-origin: 650px 0px;
+	-ms-transform-origin: 650px 0px;
 	transform-origin: 650px 0px;
 	-webkit-transition-delay: 600ms;
+	-moz-transition-delay: 600ms;
+	-ms-transition-delay: 600ms;
 	transition-delay: 600ms;
 }
+
 #blinds img:nth-child(8), #blinds img:nth-child(18) {
 	-webkit-clip: rect(0px, 800px, 840px, 700px);
 	-moz-clip: rect(0px, 800px, 840px, 700px);
 	-ms-clip: rect(0px, 800px, 840px, 700px);
 	clip: rect(0px, 800px, 840px, 700px);
 	-webkit-transform-origin: 750px, 0px;
+	-moz-transform-origin: 750px, 0px;
+	-ms-transform-origin: 750px, 0px;
 	transform-origin: 750px, 0px;
 	-webkit-transition-delay: 700ms;
+	-moz-transition-delay: 700ms;
+	-ms-transition-delay: 700ms;
 	transition-delay: 700ms;
 }
+
 #blinds img:nth-child(9), #blinds img:nth-child(19) {
 	-webkit-clip: rect(0px, 900px, 840px, 800px);
 	-moz-clip: rect(0px, 900px, 840px, 800px);
 	-ms-clip: rect(0px, 900px, 840px, 800px);
 	clip: rect(0px, 900px, 840px, 800px);
 	-webkit-transform-origin: 850px, 0px;
+	-moz-transform-origin: 850px, 0px;
+	-ms-transform-origin: 850px, 0px;
 	transform-origin: 850px, 0px;
 	-webkit-transition-delay: 800ms;
+	-moz-transition-delay: 800ms;
+	-ms-transition-delay: 800ms;
 	transition-delay: 800ms;
 }
+
 #blinds img:nth-child(10), #blinds img:nth-child(20) {
 	-webkit-clip: rect(0px, 1000px, 840px, 900px);
 	-moz-clip: rect(0px, 1000px, 840px, 900px);
 	-ms-clip: rect(0px, 1000px, 840px, 900px);
 	clip: rect(0px, 1000px, 840px, 900px);
 	-webkit-transform-origin: 950px, 0px;
+	-moz-transform-origin: 950px, 0px;
+	-ms-transform-origin: 950px, 0px;
 	transform-origin: 950px, 0px;
 	-webkit-transition-delay: 900ms;
+	-moz-transition-delay: 900ms;
+	-ms-transition-delay: 900ms;
 	transition-delay: 900ms;
-}
-/* speech Styling */
-.voiceinator {
-    padding: 2rem;
-    max-width: 50rem;
-    margin: 40px auto;
-    border-radius: 1rem;
-    position: relative;
-    background: white;
-    overflow: hidden;
-    z-index: 1;
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
-}
-.voiceinator .voiceinator-title {
-	width: calc(100% + 4rem);
-	margin: 0;
-	margin-left: -2rem;
-	margin-top: -2rem;
-	margin-bottom: 2rem;
-	padding: 5rem;
-	background: #ffc600;
-	border-bottom: 5px solid #F3C010;
-	text-align: center;
-	font-size: 5rem;
-	font-weight: 100;
-	font-family: 'Pacifico', cursive;
-	text-shadow: 3px 3px 0 #F3C010;
-}
-#support-msg {
-    text-align: center;
-    font-size: 16px;
-}
-label {
-    font-size: 16px;
-}
-.voiceinator input,
-.voiceinator button,
-.voiceinator select,
-.voiceinator textarea {
-    width: 100%;
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    border: 0;
-    font-size: 2rem;
-    background: #F7F7F7;
-    outline: 0;
-    letter-spacing: 0.1em;
-}
-textarea {
-    height: 20rem;
-}
-.voiceinator button {
-    background: #ffc600;
-    border: 0;
-    width: 49%;
-    float: left;
-    font-family: 'Pacifico', cursive;
-    margin-bottom: 0;
-    font-size: 2rem;
-    border-bottom: 5px solid #F3C010;
-    cursor: pointer;
-    position: relative;
-}
-.voiceinator button:active {
-    top: 2px;
-}
-.voiceinator button:nth-of-type(1) {
-    margin-right: 2%;
 }

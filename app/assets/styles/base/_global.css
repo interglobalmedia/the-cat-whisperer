@@ -1,0 +1,31 @@
+/* Global Styling */
+html {
+	-webkit-boz-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	-webkit-boxsizing: inherit;
+	-moz-box-sizing: inherit;
+	-ms-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding-top: 0;
+	background: #cd9b9b;
+	font-family: 'Pacifico', cursive;
+}
+
+h1 {
+	position: absolute;
+	top: 80px;
+	left: 40px;
+	width: 85%;
+	color: rgba(216, 191, 216, 1);
+	letter-spacing: 0.1em;
+	transform: transition 0s;
+	text-shadow: 2px 2px 4px #8b636c;
+}
