@@ -4,7 +4,6 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "html": "gulp html",
     "styles": "gulp styles",
     "watch": "gulp watch"
   },
