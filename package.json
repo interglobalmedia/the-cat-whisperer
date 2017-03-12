@@ -6,7 +6,8 @@
   "scripts": {
     "styles": "gulp styles",
     "watch": "gulp watch",
-    "scripts": "gulp scripts"
+    "scripts": "gulp scripts",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,13 @@
     "del": "^2.2.2",
     "eslint": "^3.17.1",
     "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-modernizr": "^1.0.0-alpha",
     "gulp-postcss": "^6.3.0",
+    "gulp-rev": "^7.1.2",
+    "gulp-uglify": "^2.1.0",
+    "gulp-usemin": "^0.3.28",
     "gulp-watch": "^4.3.11",
     "postcss-hexrgba": "^0.2.1",
     "postcss-import": "^9.1.0",
