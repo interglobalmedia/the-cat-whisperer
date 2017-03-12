@@ -8,6 +8,8 @@ const voiceSelect = document.querySelector('#voice');
 let volumeInput = document.querySelector('[name="volume"]');
 let rateInput = document.querySelector('[name="rate"]');
 let pitchInput = document.querySelector('[name="pitch"]');
+const audio = new Audio('assets/audio/06-Power-Animals.mp3');
+const image = document.querySelector('#blinds');
 
 /* is speechSynthesis present in window */
 if('speechSynthesis' in window) {
@@ -16,7 +18,10 @@ if('speechSynthesis' in window) {
 	supportmsg.innerHTML = 'Sorry but your browser does not support speech synthesis';
 }
 
-import { populateVoices, speak, toggle } from './modules/textToSpeech';
+import { populateVoices, speak, toggle, playAudio, stopAudio } from './modules/textToSpeech';
+
+image.addEventListener('mouseenter', playAudio);
+image.addEventListener('mouseleave', stopAudio);
 
 window.speechSynthesis.addEventListener('onvoiceschanged', populateVoices);
 

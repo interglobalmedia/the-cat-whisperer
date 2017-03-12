@@ -8,6 +8,8 @@ const voiceSelect = document.querySelector('#voice');
 let volumeInput = document.querySelector('[name="volume"]');
 let rateInput = document.querySelector('[name="rate"]');
 let pitchInput = document.querySelector('[name="pitch"]');
+const audio = new Audio('assets/audio/06-Power-Animals.mp3');
+const image = document.querySelector('#blinds');
 
 if('speechSynthesis' in window) {
 	supportmsg.innerHTML = 'Your browser supports speech synthesis';
@@ -61,6 +63,16 @@ export function toggle(startOver = true) {
 	}
 }
 
+export function playAudio() {
+	audio.play();
+}
+
+export function stopAudio() {
+	audio.pause();
+}
+
+image.addEventListener('mouseenter', playAudio);
+image.addEventListener('mouseleave', stopAudio);
 /* need explicit call to populateVoices() for Firefox and Safari. Happens after onvoiceschanged event returns populateVoices(); */
 populateVoices();
 /* when there is a change in voice selection, make a call to populateVoices(); This replaces the original speechSynthesis.addEventListener('voiceschanged', populatePopulateVoices). Because Safari was not able to evaluate it. */

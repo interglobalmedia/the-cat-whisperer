@@ -10306,6 +10306,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.populateVoices = populateVoices;
 exports.speak = speak;
 exports.toggle = toggle;
+exports.playAudio = playAudio;
+exports.stopAudio = stopAudio;
 
 var _jquery = __webpack_require__(0);
 
@@ -10322,6 +10324,8 @@ var voiceSelect = document.querySelector('#voice');
 var volumeInput = document.querySelector('[name="volume"]');
 var rateInput = document.querySelector('[name="rate"]');
 var pitchInput = document.querySelector('[name="pitch"]');
+var audio = new Audio('assets/audio/06-Power-Animals.mp3');
+var image = document.querySelector('#blinds');
 
 if ('speechSynthesis' in window) {
 	supportmsg.innerHTML = 'Your browser supports speech synthesis';
@@ -10378,6 +10382,16 @@ function toggle() {
 	}
 }
 
+function playAudio() {
+	audio.play();
+}
+
+function stopAudio() {
+	audio.pause();
+}
+
+image.addEventListener('mouseenter', playAudio);
+image.addEventListener('mouseleave', stopAudio);
 /* need explicit call to populateVoices() for Firefox and Safari. Happens after onvoiceschanged event returns populateVoices(); */
 populateVoices();
 /* when there is a change in voice selection, make a call to populateVoices(); This replaces the original speechSynthesis.addEventListener('voiceschanged', populatePopulateVoices). Because Safari was not able to evaluate it. */
@@ -10421,6 +10435,8 @@ var voiceSelect = document.querySelector('#voice');
 var volumeInput = document.querySelector('[name="volume"]');
 var rateInput = document.querySelector('[name="rate"]');
 var pitchInput = document.querySelector('[name="pitch"]');
+var audio = new Audio('assets/audio/06-Power-Animals.mp3');
+var image = document.querySelector('#blinds');
 
 /* is speechSynthesis present in window */
 if ('speechSynthesis' in window) {
@@ -10428,6 +10444,9 @@ if ('speechSynthesis' in window) {
 } else {
 	supportmsg.innerHTML = 'Sorry but your browser does not support speech synthesis';
 }
+
+image.addEventListener('mouseenter', _textToSpeech.playAudio);
+image.addEventListener('mouseleave', _textToSpeech.stopAudio);
 
 window.speechSynthesis.addEventListener('onvoiceschanged', _textToSpeech.populateVoices);
 
