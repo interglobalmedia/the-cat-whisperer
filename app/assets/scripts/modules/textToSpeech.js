@@ -1,5 +1,5 @@
+import $ from 'jquery';
 /* Speech Synthesis */
-
 const supportmsg = document.getElementById('support-msg');
 const speakButton = document.querySelector('#speak');
 const stopButton = document.querySelector('#stop');
@@ -16,10 +16,8 @@ if('speechSynthesis' in window) {
 }
 
 /* populates all the voices available in Speech Synthesis in the dropdown menu */
-
-function populateVoices() {
+export function populateVoices() {
 	const voices = speechSynthesis.getVoices();
-	console.log(voices);
 	const voiceOptions =
 	voices.forEach((voice, indx) => {
 		/* this will create the option tag for the various voices in the select dropdown */
@@ -33,7 +31,7 @@ function populateVoices() {
 }
 
 // sets text to speech
-function speak(text) {
+export function speak(text) {
 	/* instead of previous global variable. When I made changes, it ended up undefined. */
 	const msg = new SpeechSynthesisUtterance();
 	const voices = speechSynthesis.getVoices();
@@ -55,7 +53,7 @@ function speak(text) {
 }
 
 // toggle speechSynthesis on/off
-function toggle(startOver = true) {
+export function toggle(startOver = true) {
 	const msg = new SpeechSynthesisUtterance();
 	speechSynthesis.cancel();
 	if(startOver) {

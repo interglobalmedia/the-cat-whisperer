@@ -12,7 +12,7 @@
 	transform-style: preserve-3d;
 	max-width: 1000px;
 	padding-bottom: 56.5%;
-	min-height: 100vh;
+	height: auto;
 }
 
 #blinds img {
@@ -27,7 +27,7 @@
 	transition: 1s;
 	max-width: 1000px;
 	width: 100%;
-	border: 8px groove #8b636c;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 #blinds img.first {

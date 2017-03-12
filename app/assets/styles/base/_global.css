@@ -15,17 +15,18 @@ html {
 body {
 	margin: 0;
 	padding-top: 0;
-	background: #cd9b9b;
+	background: $mainRosyBrown3;
 	font-family: 'Pacifico', cursive;
+	overflow-x: hidden;
 }
 
 h1 {
 	position: absolute;
 	top: 80px;
 	left: 40px;
-	width: 85%;
+	width: 50%;
 	color: rgba(216, 191, 216, 1);
 	letter-spacing: 0.1em;
 	transform: transition 0s;
-	text-shadow: 2px 2px 4px #8b636c;
+	text-shadow: 2px 2px 4px $mainPink4;
 }
