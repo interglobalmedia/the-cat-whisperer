@@ -1,0 +1,17 @@
+/* Local Storage Styling */
+/* Clear and Empty Links */
+.storage-buttons {
+    text-align: center;
+    margin: 30px auto;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+}
+
+.clear, .empty {
+    margin: 8px;
+}
+
+.clear:hover, .empty:hover {
+    color: #ffc600;
+    cursor: pointer;
+}

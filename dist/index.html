@@ -4,10 +4,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>Venetian Blinds Photo Gallery</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- adding maximum-scale=1.0, user-scalable=no prevents content jumping -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto+Slab" rel="stylesheet">
 
-	<link rel="stylesheet" href="assets/styles/styles-b87d67d127.css"/>
+	<link rel="stylesheet" href="assets/styles/styles-953e34daff.css"/>
 
 	<script src="assets/scripts/vendor-1e34105a60.js"></script>
 </head>
@@ -39,8 +40,6 @@
 				<h1>The Cat Whisperer</h1>
 			</figcaption>
 		</figure>
-	</div>
-	<div class="wrap">
 		<div class="voiceinator">
 			<div class="voiceinator-title">The Voiceinator</div>
 			<div id="support-msg"></div>
@@ -62,8 +61,12 @@
 				<label for="pitch">Pitch:</label>
 				<input name="pitch" type="range" min="0" max="2" step="0.1">
 			</div>
-
-			<textarea name="text">Hello! I love cats. I would love to hear about yours! 👍</textarea>
+			<div class="storage-buttons">
+				<a class="clear">Clear Storage</a>
+				<a class="empty">Empty Storage</a>
+			</div>
+			<div id="storagequota-msg"></div>
+			<textarea name="text" class="localstorage">Hello! I love cats. I would love to hear about yours! 👍</textarea>
 			<button id="stop">Stop</button>
 			<button id="speak">Speak</button>
 		</div>
@@ -71,7 +74,7 @@
 	<footer class="footer">
 		<p>© 2017 Maria D. Campbell</p>
 	</footer>
-	<script src="assets/scripts/app-ea8740b591.js"></script>
+	<script src="assets/scripts/app-cfa1881edb.js"></script>
 </body>
 
 </html>
