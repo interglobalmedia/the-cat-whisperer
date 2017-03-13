@@ -11,8 +11,8 @@
 	perspective: 1800px;
 	transform-style: preserve-3d;
 	max-width: 1000px;
+	width: 100%;
 	padding-bottom: 56.5%;
-	height: auto;
 }
 
 #blinds img {
@@ -44,14 +44,18 @@
 	transform: rotateY(-180deg) translateZ(1px);
 }
 
-#blinds:hover img.first {
+#blinds:hover img.first,
+/* so that animation works on touch devices */
+#blinds:focus img.first {
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);
 	-ms-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
 
-#blinds:hover img.second {
+#blinds:hover img.second,
+/* so that animation works on touch devices */
+#blinds:focus img.second {
 	-webkit-transform: rotateY(0deg) translateZ(1px);
 	-moz-transform: rotateY(0deg) translateZ(1px);
 	transform: rotateY(0deg) translateZ(1px);

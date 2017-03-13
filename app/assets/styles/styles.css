@@ -3,5 +3,6 @@
 @import 'base/_mixins';
 @import 'base/_global';
 @import 'modules/_venetian';
+@import 'modules/_local-storage';
 @import 'modules/_speech';
 @import 'modules/_footer';

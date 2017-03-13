@@ -509,8 +509,8 @@ h1 {
 	-webkit-transform-style: preserve-3d;
 	        transform-style: preserve-3d;
 	max-width: 1000px;
+	width: 100%;
 	padding-bottom: 56.5%;
-	height: auto;
 }
 
 #blinds img {
@@ -536,12 +536,16 @@ h1 {
 	transform: rotateY(-180deg) translateZ(1px);
 }
 
-#blinds:hover img.first {
+#blinds:hover img.first,
+/* so that animation works on touch devices */
+#blinds:focus img.first {
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
 
-#blinds:hover img.second {
+#blinds:hover img.second,
+/* so that animation works on touch devices */
+#blinds:focus img.second {
 	-webkit-transform: rotateY(0deg) translateZ(1px);
 	transform: rotateY(0deg) translateZ(1px);
 }
@@ -652,6 +656,26 @@ h1 {
 	transform-origin: 950px, 0px;
 	-webkit-transition-delay: 900ms;
 	transition-delay: 900ms;
+}
+
+/* Local Storage Styling */
+
+/* Clear and Empty Links */
+
+.storage-buttons {
+    text-align: center;
+    margin: 30px auto;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+}
+
+.clear, .empty {
+    margin: 8px;
+}
+
+.clear:hover, .empty:hover {
+    color: #ffc600;
+    cursor: pointer;
 }
 
 /* speech Styling */

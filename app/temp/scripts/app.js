@@ -10308,6 +10308,9 @@ exports.speak = speak;
 exports.toggle = toggle;
 exports.playAudio = playAudio;
 exports.stopAudio = stopAudio;
+exports.localStorageSupport = localStorageSupport;
+exports.clearStorage = clearStorage;
+exports.emptyStorage = emptyStorage;
 
 var _jquery = __webpack_require__(0);
 
@@ -10326,6 +10329,11 @@ var rateInput = document.querySelector('[name="rate"]');
 var pitchInput = document.querySelector('[name="pitch"]');
 var audio = new Audio('assets/audio/06-Power-Animals.mp3');
 var image = document.querySelector('#blinds');
+/* localstorage */
+var catStory = document.querySelector('.localstorage');
+var clearStorageButton = document.querySelector('.clear');
+var emptyStorageButton = document.querySelector('.empty');
+var storagequotamsg = document.getElementById('storagequota-msg');
 
 if ('speechSynthesis' in window) {
 	supportmsg.innerHTML = 'Your browser supports speech synthesis';
@@ -10381,24 +10389,72 @@ function toggle() {
 		speechSynthesis.speak(msg);
 	}
 }
-
+// play music
 function playAudio() {
 	audio.play();
 }
 
+// stop music
 function stopAudio() {
 	audio.pause();
 }
 
+// check for local storage
+function localStorageSupport() {
+	return typeof Storage !== 'undefined';
+}
+
+// run detection with inverted expression
+if (!localStorageSupport) {
+	// change value to inform visitor of no local storage support
+	storagequotamsg.innerHTML = 'Sorry. No HTML5 local storage support here.';
+} else {
+	try {
+		// set interval and autosave every second
+		setInterval(function () {
+			localStorage.setItem('autosave', catStory.value);
+		}, 1000);
+	} catch (domException) {
+		if (domException.name === 'QUOTA_EXCEEDED_ERR' || domException.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
+			storagequotamsg.innerHTML = 'Local Storage Quota Exceeded!';
+		}
+	}
+}
+
+// if there is data available
+if (localStorage.getItem('autosave', catStory.value)) {
+	// retrieve item
+	catStory.value = localStorage.getItem('autosave', catStory.value);
+}
+
+// clear local storage
+function clearStorage() {
+	catStory.value = '';
+	localStorage.removeItem('autosave', catStory.value);
+}
+// empty local storage
+function emptyStorage() {
+	catStory.value = '';
+	localStorage.clear();
+}
+
+// clear local storage button event listener
+clearStorageButton.addEventListener('click', clearStorage);
+// empty local storage button event listener
+emptyStorageButton.addEventListener('click', emptyStorage);
+// audio event listeners
 image.addEventListener('mouseenter', playAudio);
 image.addEventListener('mouseleave', stopAudio);
 /* need explicit call to populateVoices() for Firefox and Safari. Happens after onvoiceschanged event returns populateVoices(); */
 populateVoices();
-/* when there is a change in voice selection, make a call to populateVoices(); This replaces the original speechSynthesis.addEventListener('voiceschanged', populatePopulateVoices). Because Safari was not able to evaluate it. */
+/* when there is a change in voice selection, make a call to populateVoices(); This replaces the original speechSynthesis.addEventListener('voiceschanged', populatePopulateVoices). Because Safari was not able to evaluate it.
+This set up along with explicit call to populateVoices() not needed when application set in workflow. Instead, use
+window.speechSynthesis.addEventListener('onvoiceschanged', populateVoices); as implemented in app.js */
 window.speechSynthesis.onvoiceschanged = function (e) {
 	return populateVoices();
 };
-/* event listener for speak (start) button. If there is a voice to select and it is selected, trigger text to speech. */
+/* event listener for speak (start) button. If there is a voice to select and it is selected, trigger text to speech.
+Not necessary when application set in workflow. Only toggle() function needed. */
 speakButton.addEventListener('click', function (e) {
 	/* determine whether a voice has been selected, and if it has, click on button to trigger speak(); */
 	if (voiceSelect.value.length > 0) {
@@ -10427,6 +10483,7 @@ var _textToSpeech = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* Speech Synthesis */
 var supportmsg = document.getElementById('support-msg');
 var speakButton = document.querySelector('#speak');
 var stopButton = document.querySelector('#stop');
@@ -10437,6 +10494,12 @@ var rateInput = document.querySelector('[name="rate"]');
 var pitchInput = document.querySelector('[name="pitch"]');
 var audio = new Audio('assets/audio/06-Power-Animals.mp3');
 var image = document.querySelector('#blinds');
+/* localstorage */
+// grab textarea for local storage
+var catStory = document.querySelector('.localstorage');
+var clearStorageButton = document.querySelector('.clear');
+var emptyStorageButton = document.querySelector('.empty');
+var storagequotamsg = document.getElementById('storagequota-msg');
 
 /* is speechSynthesis present in window */
 if ('speechSynthesis' in window) {
@@ -10445,9 +10508,40 @@ if ('speechSynthesis' in window) {
 	supportmsg.innerHTML = 'Sorry but your browser does not support speech synthesis';
 }
 
+// local storage
+// run detection with inverted expression
+if (!_textToSpeech.localStorageSupport) {
+	// change value to inform visitor of no local storage support
+	storagequotamsg.innerHTML = 'Sorry. No HTML5 local storage support here.';
+} else {
+	try {
+		// set interval and autosave every second
+		setInterval(function () {
+			localStorage.setItem('autosave', catStory.value);
+		}, 1000);
+	} catch (domException) {
+		if (domException.name === 'QUOTA_EXCEEDED_ERR' || domException.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
+			storagequotamsg.innerHTML = 'Local Storage Quota Exceeded!';
+		}
+	}
+}
+
+// if there is data available
+if (localStorage.getItem('autosave', catStory.value)) {
+	// retrieve item
+	catStory.value = localStorage.getItem('autosave', catStory.value);
+}
+
+// clear local storage button event listener
+clearStorageButton.addEventListener('click', _textToSpeech.clearStorage);
+// empty local storage button event listener
+emptyStorageButton.addEventListener('click', _textToSpeech.emptyStorage);
+// end local storage
+
+// audio event listeners
 image.addEventListener('mouseenter', _textToSpeech.playAudio);
 image.addEventListener('mouseleave', _textToSpeech.stopAudio);
-
+// speechSynthesis event listener
 window.speechSynthesis.addEventListener('onvoiceschanged', _textToSpeech.populateVoices);
 
 /* or can do toggle.bind(null, false). with bind, you take a function, call it in the context of null, and pass it an argument of false. That's so that toggle(false) does not automatically run on page load. */
