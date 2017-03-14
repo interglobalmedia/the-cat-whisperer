@@ -11,7 +11,9 @@
     margin: 8px;
 }
 
-.clear:hover, .empty:hover {
+.clear:hover, .empty:hover,
+.clear:focus, .empty:focus,
+.clear:active, .empty:active {
     color: #ffc600;
     cursor: pointer;
 }
