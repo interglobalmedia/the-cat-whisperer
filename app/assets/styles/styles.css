@@ -5,4 +5,5 @@
 @import 'modules/_fader';
 @import 'modules/_local-storage';
 @import 'modules/_speech';
+@import 'modules/_sticky-footer.css';
 @import 'modules/_footer';
