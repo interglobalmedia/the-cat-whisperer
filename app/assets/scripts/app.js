@@ -63,6 +63,5 @@ image.addEventListener('mouseenter', playAudio);
 image.addEventListener('mouseleave', stopAudio);
 // speechSynthesis event listener
 window.speechSynthesis.addEventListener('onvoiceschanged', populateVoices);
-
 /* or can do toggle.bind(null, false). with bind, you take a function, call it in the context of null, and pass it an argument of false. That's so that toggle(false) does not automatically run on page load. */
 stopButton.addEventListener('click', () => toggle(false));

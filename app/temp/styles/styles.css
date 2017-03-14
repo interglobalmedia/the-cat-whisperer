@@ -479,6 +479,7 @@ body {
 	background: #cd9b9b;
 	font-family: 'Pacifico', cursive;
 	overflow-x: hidden;
+	cursor: pointer;
 }
 
 h1 {
@@ -538,14 +539,17 @@ h1 {
 
 #blinds:hover img.first,
 /* so that animation works on touch devices */
-#blinds:focus img.first {
+#blinds:focus img.first,
+#blinds:active img.first,
+ {
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
 
 #blinds:hover img.second,
 /* so that animation works on touch devices */
-#blinds:focus img.second {
+#blinds:focus img.second,
+#blinds:active img.second {
 	-webkit-transform: rotateY(0deg) translateZ(1px);
 	transform: rotateY(0deg) translateZ(1px);
 }
