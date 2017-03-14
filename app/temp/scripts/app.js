@@ -10500,6 +10500,9 @@ var catStory = document.querySelector('.localstorage');
 var clearStorageButton = document.querySelector('.clear');
 var emptyStorageButton = document.querySelector('.empty');
 var storagequotamsg = document.getElementById('storagequota-msg');
+// audio buttons for mobile/touch
+var play = document.querySelector('.play');
+var pause = document.querySelector('pause');
 
 /* is speechSynthesis present in window */
 if ('speechSynthesis' in window) {
@@ -10538,9 +10541,12 @@ clearStorageButton.addEventListener('click', _textToSpeech.clearStorage);
 emptyStorageButton.addEventListener('click', _textToSpeech.emptyStorage);
 // end local storage
 
-// audio event listeners
+// audio event listeners on laptop/desktop
 image.addEventListener('mouseenter', _textToSpeech.playAudio);
 image.addEventListener('mouseleave', _textToSpeech.stopAudio);
+// audio event listeners on mobile/touch devices
+play.addEventListener('click', _textToSpeech.playAudio);
+pause.addEventListener('click', _textToSpeech.stopAudio);
 // speechSynthesis event listener
 window.speechSynthesis.addEventListener('onvoiceschanged', _textToSpeech.populateVoices);
 /* or can do toggle.bind(null, false). with bind, you take a function, call it in the context of null, and pass it an argument of false. That's so that toggle(false) does not automatically run on page load. */

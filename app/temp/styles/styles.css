@@ -482,18 +482,6 @@ body {
 	cursor: pointer;
 }
 
-h1 {
-	position: absolute;
-	top: 80px;
-	left: 40px;
-	width: 50%;
-	color: rgba(216, 191, 216, 1);
-	letter-spacing: 0.1em;
-	-webkit-transform: transition 0s;
-	        transform: transition 0s;
-	text-shadow: 2px 2px 4px #8b636c;
-}
-
 /* Venetian Blinds Styling */
 
 .wrap {
@@ -503,163 +491,299 @@ h1 {
 }
 
 #blinds {
-	margin: 0 auto;
 	position: relative;
-	-webkit-perspective: 1800px;
-	        perspective: 1800px;
-	-webkit-transform-style: preserve-3d;
-	        transform-style: preserve-3d;
-	max-width: 1000px;
 	width: 100%;
+	height: 100%;
 	padding-bottom: 56.5%;
+	margin: 0 auto;
 }
 
-#blinds img {
-	left: 0;
-	top: 0;
-	margin-left: auto;
-	margin-right: auto;
+#blinds:after {
+	background: transparent url(../../assets/images/pattern.png) repeat top left;
+}
+
+li {
+	list-style: none;
+}
+
+#blinds li span {
 	position: absolute;
-	-webkit-transition: 1s;
-	transition: 1s;
-	max-width: 1000px;
+	box-shadow: 0px 2px 5px 5px rgba(139,119,101, 0.2);
 	width: 100%;
-	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+	height: 100%;
+	top: 0;
+	left: 0;
+	color: transparent;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: none;
+	opacity: 0;
+	z-index: 0;
+	-webkit-animation: fader 78s infinite 0s;
+	        animation: fader 78s infinite 0s;
 }
 
-#blinds img.first {
-	-webkit-transform: rotateY(0deg);
-	transform: rotateY(0deg);
+#blinds li div {
+	z-index: 1000;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: left;
+	opacity: 0;
+	color: rgba(216, 191, 216, 1);
+	-webkit-animation: titleAnimation 78s linear infinite 0s;
+	        animation: titleAnimation 78s linear infinite 0s;
 }
 
-#blinds img.second {
-	-webkit-transform: rotateY(-180deg) translateZ(1px);
-	transform: rotateY(-180deg) translateZ(1px);
+#blinds li div h3 {
+	font-family: 'Pacifico', cursive;
+	font-size: 20px;
+	padding: 0;
+	letter-spacing: 0.1em;
+	text-shadow: 2px 2px 4px #8b636c;
+
 }
 
-#blinds:hover img.first,
-/* so that animation works on touch devices */
-#blinds:focus img.first,
-#blinds:active img.first,
- {
-	-webkit-transform: rotateY(180deg);
-	transform: rotateY(180deg);
+@media (min-width: 530px) {
+
+  #blinds li div h3 {
+    font-size: 24px;
+  }
+
+  @media (min-width:768px) {
+
+    #blinds li div h3 {
+      font-size: 32px;
+    }
+  }
 }
 
-#blinds:hover img.second,
-/* so that animation works on touch devices */
-#blinds:focus img.second,
-#blinds:active img.second {
-	-webkit-transform: rotateY(0deg) translateZ(1px);
-	transform: rotateY(0deg) translateZ(1px);
+#blinds li:nth-child(1) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-16-34--2000.jpg);
+	-webkit-animation-delay: 0s;
+	        animation-delay: 0s;
 }
 
-#blinds img:nth-child(1), #blinds img:nth-child(11) {
-	-webkit-clip: rect(0px, 100px, 840px, 0px);
-	-moz-clip: rect(0px, 100px, 840px, 0px);
-	-ms-clip: rect(0px, 100px, 840px, 0px);
-	clip: rect(0px, 100px, 840px, 0px);
-	-webkit-transform-origin: 50px 0px;
-	transform-origin: 50px 0px;
+#blinds li:nth-child(2) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-27-54--2000.jpg);
+	-webkit-animation-delay: 6s;
+	        animation-delay: 6s;
 }
 
-#blinds img:nth-child(2), #blinds img:nth-child(12) {
-	-webkit-clip: rect(0px, 200px, 840px, 100px);
-	-moz-clip: rect(0px, 200px, 840px, 100px);
-	-ms-clip: rect(0px, 200px, 840px, 100px);
-	clip: rect(0px, 200px, 840px, 100px);
-	-webkit-transform-origin: 150px 0px;
-	transform-origin: 150px 0px;
-	-webkit-transition-delay: 100ms;
-	transition-delay: 100ms;
+#blinds li:nth-child(3) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-28-54--2000.jpg);
+	-webkit-animation-delay: 12s;
+	        animation-delay: 12s;
 }
 
-#blinds img:nth-child(3), #blinds img:nth-child(13) {
-	-webkit-clip: rect(0px, 300px, 840px, 200px);
-	-moz-clip: rect(0px, 300px, 840px, 200px);
-	-ms-clip: rect(0px, 300px, 840px, 200px);
-	clip: rect(0px, 300px, 840px, 200px);
-	-webkit-transform-origin: 250px 0px;
-	transform-origin: 250px 0px;
-	-webkit-transition-delay: 200ms;
-	transition-delay: 200ms;
+#blinds li:nth-child(4) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-28-56--2000.jpg);
+	-webkit-animation-delay: 18s;
+	        animation-delay: 18s;
 }
 
-#blinds img:nth-child(4), #blinds img:nth-child(14) {
-	-webkit-clip: rect(0px, 400px, 840px, 300px);
-	-moz-clip: rect(0px, 400px, 840px, 300px);
-	-ms-clip: rect(0px, 400px, 840px, 300px);
-	clip: rect(0px, 400px, 840px, 300px);
-	-webkit-transform-origin: 350px 0px;
-	transform-origin: 350px 0px;
-	-webkit-transition-delay: 300ms;
-	transition-delay: 300ms;
+#blinds li:nth-child(5) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-28-59--2000.jpg);
+	-webkit-animation-delay: 24s;
+	        animation-delay: 24s;
 }
 
-#blinds img:nth-child(5), #blinds img:nth-child(15) {
-	-webkit-clip: rect(0px, 500px, 840px, 400px);
-	-moz-clip: rect(0px, 500px, 840px, 400px);
-	-ms-clip: rect(0px, 500px, 840px, 400px);
-	clip: rect(0px, 500px, 840px, 400px);
-	-webkit-transform-origin: 450px 0px;
-	transform-origin: 450px 0px;
-	-webkit-transition-delay: 400ms;
-	transition-delay: 400ms;
+#blinds li:nth-child(6) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-29-05--2000.jpg);
+	-webkit-animation-delay: 30s;
+	        animation-delay: 30s;
 }
 
-#blinds img:nth-child(6), #blinds img:nth-child(16) {
-	-webkit-clip: rect(0px, 600px, 840px, 500px);
-	-moz-clip: rect(0px, 600px, 840px, 500px);
-	-ms-clip: rect(0px, 600px, 840px, 500px);
-	clip: rect(0px, 600px, 840px, 500px);
-	-webkit-transform-origin: 550px 0px;
-	transform-origin: 550px 0px;
-	-webkit-transition-delay: 500ms;
-	transition-delay: 500ms;
+#blinds li:nth-child(7) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-29-08--2000.jpg);
+	-webkit-animation-delay: 36s;
+	        animation-delay: 36s;
 }
 
-#blinds img:nth-child(7), #blinds img:nth-child(17) {
-	-webkit-clip: rect(0px, 700px, 840px, 600px);
-	-moz-clip: rect(0px, 700px, 840px, 600px);
-	-ms-clip: rect(0px, 700px, 840px, 600px);
-	clip: rect(0px, 700px, 840px, 600px);
-	-webkit-transform-origin: 650px 0px;
-	transform-origin: 650px 0px;
-	-webkit-transition-delay: 600ms;
-	transition-delay: 600ms;
+#blinds li:nth-child(8) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-29-25--2000.jpg);
+	-webkit-animation-delay: 42s;
+	        animation-delay: 42s;
 }
 
-#blinds img:nth-child(8), #blinds img:nth-child(18) {
-	-webkit-clip: rect(0px, 800px, 840px, 700px);
-	-moz-clip: rect(0px, 800px, 840px, 700px);
-	-ms-clip: rect(0px, 800px, 840px, 700px);
-	clip: rect(0px, 800px, 840px, 700px);
-	-webkit-transform-origin: 750px, 0px;
-	transform-origin: 750px, 0px;
-	-webkit-transition-delay: 700ms;
-	transition-delay: 700ms;
+#blinds li:nth-child(9) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-41-29--2000.jpg);
+	-webkit-animation-delay: 48s;
+	        animation-delay: 48s;
 }
 
-#blinds img:nth-child(9), #blinds img:nth-child(19) {
-	-webkit-clip: rect(0px, 900px, 840px, 800px);
-	-moz-clip: rect(0px, 900px, 840px, 800px);
-	-ms-clip: rect(0px, 900px, 840px, 800px);
-	clip: rect(0px, 900px, 840px, 800px);
-	-webkit-transform-origin: 850px, 0px;
-	transform-origin: 850px, 0px;
-	-webkit-transition-delay: 800ms;
-	transition-delay: 800ms;
+#blinds li:nth-child(10) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-42-02--2000.jpg);
+	-webkit-animation-delay: 54s;
+	        animation-delay: 54s;
 }
 
-#blinds img:nth-child(10), #blinds img:nth-child(20) {
-	-webkit-clip: rect(0px, 1000px, 840px, 900px);
-	-moz-clip: rect(0px, 1000px, 840px, 900px);
-	-ms-clip: rect(0px, 1000px, 840px, 900px);
-	clip: rect(0px, 1000px, 840px, 900px);
-	-webkit-transform-origin: 950px, 0px;
-	transform-origin: 950px, 0px;
-	-webkit-transition-delay: 900ms;
-	transition-delay: 900ms;
+#blinds li:nth-child(11) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-42-04--2000.jpg);
+	-webkit-animation-delay: 60s;
+	        animation-delay: 60s;
+}
+
+#blinds li:nth-child(12) span {
+	background-image: url(../../assets/images/Photo-Nov-09-09-42-12--2000.jpg);
+	-webkit-animation-delay: 66s;
+	        animation-delay: 66s;
+}
+
+#blinds li:nth-child(1) div {
+	-webkit-animation-delay: 0s;
+	        animation-delay: 0s;
+}
+
+#blinds li:nth-child(2) div {
+	-webkit-animation-delay: 6s;
+	        animation-delay: 6s;
+}
+
+#blinds li:nth-child(2) div {
+	-webkit-animation-delay: 6s;
+	        animation-delay: 6s;
+	bottom: 90px;
+}
+
+#blinds li:nth-child(3) div {
+	-webkit-animation-delay: 12s;
+	        animation-delay: 12s;
+	bottom: 90px;
+}
+
+#blinds li:nth-child(4) div {
+	-webkit-animation-delay: 18s;
+	        animation-delay: 18s;
+	bottom: 90px;
+}
+
+#blinds li:nth-child(5) div {
+	-webkit-animation-delay: 24s;
+	        animation-delay: 24s;
+	bottom: 90px;
+}
+
+#blinds li:nth-child(6) div {
+	-webkit-animation-delay: 30s;
+	        animation-delay: 30s;
+	bottom: 90px;
+}
+
+#blinds li:nth-child(7) div {
+	-webkit-animation-delay: 36s;
+	        animation-delay: 36s;
+	bottom: 90px;
+}
+
+#blinds li:nth-child(8) div {
+	-webkit-animation-delay: 42s;
+	        animation-delay: 42s;
+	bottom: 90px;
+}
+
+#blinds li:nth-child(9) div {
+	-webkit-animation-delay: 48s;
+	        animation-delay: 48s;
+}
+
+#blinds li:nth-child(10) div {
+	-webkit-animation-delay: 54s;
+	        animation-delay: 54s;
+}
+
+#blinds li:nth-child(11) div {
+	-webkit-animation-delay: 60s;
+	        animation-delay: 60s;
+}
+
+#blinds li:nth-child(12) div {
+	-webkit-animation-delay: 66s;
+	        animation-delay: 66s;
+}
+
+@-webkit-keyframes fader {
+	0% {
+		opacity: 0;
+		-webkit-animation-timing-function: ease-in;
+		        animation-timing-function: ease-in;
+	}
+    8% {
+		opacity: 1;
+		-webkit-animation-timing-function: ease-out;
+		        animation-timing-function: ease-out;
+	}
+    17% {
+		opacity: 1;
+	}
+    25% { opacity: 0;
+	}
+    100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fader {
+	0% {
+		opacity: 0;
+		-webkit-animation-timing-function: ease-in;
+		        animation-timing-function: ease-in;
+	}
+    8% {
+		opacity: 1;
+		-webkit-animation-timing-function: ease-out;
+		        animation-timing-function: ease-out;
+	}
+    17% {
+		opacity: 1;
+	}
+    25% { opacity: 0;
+	}
+    100% {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes titleAnimation {
+	0% {
+		opacity: 0;
+	}
+	6% {
+		opacity: 0;
+	}
+	16% {
+		opacity: 1;
+	}
+	17% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes titleAnimation {
+	0% {
+		opacity: 0;
+	}
+	6% {
+		opacity: 0;
+	}
+	16% {
+		opacity: 1;
+	}
+	17% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+/* for browsers that don't support animations, show last slideshow image by setting the opacity to 1 */
+
+.no-cssanimations #blinds li span {
+	opacity: 1;
 }
 
 /* Local Storage Styling */
@@ -688,7 +812,7 @@ h1 {
     padding: 2rem;
     max-width: 50rem;
     width: 100%;
-    margin: 30% auto;
+    margin: 15% auto;
     border-radius: 1rem;
     position: relative;
     background: #8b636c;

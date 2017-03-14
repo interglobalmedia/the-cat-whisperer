@@ -20,14 +20,3 @@ body {
 	overflow-x: hidden;
 	cursor: pointer;
 }
-
-h1 {
-	position: absolute;
-	top: 80px;
-	left: 40px;
-	width: 50%;
-	color: rgba(216, 191, 216, 1);
-	letter-spacing: 0.1em;
-	transform: transition 0s;
-	text-shadow: 2px 2px 4px $mainPink4;
-}
