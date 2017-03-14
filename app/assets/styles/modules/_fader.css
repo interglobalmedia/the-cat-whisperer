@@ -11,6 +11,7 @@
 	height: 100%;
 	padding-bottom: 56.5%;
 	margin: 0 auto;
+	background: black;
 }
 
 #blinds:after {
@@ -221,4 +222,27 @@ li {
 /* for browsers that don't support animations, show last slideshow image by setting the opacity to 1 */
 .no-cssanimations #blinds li span {
 	opacity: 1;
+}
+
+/* Audio (music) Play/Pause Button Styling */
+
+.audio-buttons {
+	margin: 20px auto 0;
+	text-align: center;
+}
+
+.play, .pause {
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	background: $mainPink4;
+	padding: 10px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	box-shadow: 2px 2px 4px rgba($mainRosyBrown4, 0.9);
+}
+
+.play {
+	margin-right: 10px;
+	width: 70px;
 }

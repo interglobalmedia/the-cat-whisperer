@@ -9,6 +9,10 @@ let volumeInput = document.querySelector('[name="volume"]');
 let rateInput = document.querySelector('[name="rate"]');
 let pitchInput = document.querySelector('[name="pitch"]');
 const audio = new Audio('assets/audio/06-Power-Animals.mp3');
+// audio play/pause buttons
+const play = document.querySelector('.play');
+const pause = document.querySelector('.pause');
+
 const image = document.querySelector('#blinds');
 /* localstorage */
 const catStory = document.querySelector('.localstorage');
@@ -116,6 +120,10 @@ export function emptyStorage() {
 	catStory.value = '';
 	localStorage.clear();
 }
+
+// play/pause audio button event listeners
+play.addEventListener('click', playAudio);
+pause.addEventListener('click', stopAudio);
 
 // clear local storage button event listener
 clearStorageButton.addEventListener('click', clearStorage);
