@@ -9,6 +9,10 @@ let volumeInput = document.querySelector('[name="volume"]');
 let rateInput = document.querySelector('[name="rate"]');
 let pitchInput = document.querySelector('[name="pitch"]');
 const audio = new Audio('assets/audio/06-Power-Animals.mp3');
+// audio play/pause buttons
+const play = document.querySelector('.play');
+const pause = document.querySelector('.pause');
+
 const image = document.querySelector('#blinds');
 /* localstorage */
 // grab textarea for local storage
@@ -16,9 +20,6 @@ const catStory = document.querySelector('.localstorage');
 const clearStorageButton = document.querySelector('.clear');
 const emptyStorageButton = document.querySelector('.empty');
 const storagequotamsg = document.getElementById('storagequota-msg');
-// audio buttons for mobile/touch
-const play = document.querySelector('.play');
-const pause = document.querySelector('pause');
 
 /* is speechSynthesis present in window */
 if('speechSynthesis' in window) {
@@ -55,6 +56,9 @@ if(localStorage.getItem('autosave', catStory.value)) {
 
 import { clearStorage, emptyStorage } from './modules/textToSpeech';
 
+// play/pause audio button event listeners
+play.addEventListener('click', playAudio);
+pause.addEventListener('click', stopAudio);
 // clear local storage button event listener
 clearStorageButton.addEventListener('click', clearStorage);
 // empty local storage button event listener

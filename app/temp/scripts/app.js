@@ -10328,6 +10328,10 @@ var volumeInput = document.querySelector('[name="volume"]');
 var rateInput = document.querySelector('[name="rate"]');
 var pitchInput = document.querySelector('[name="pitch"]');
 var audio = new Audio('assets/audio/06-Power-Animals.mp3');
+// audio play/pause buttons
+var play = document.querySelector('.play');
+var pause = document.querySelector('.pause');
+
 var image = document.querySelector('#blinds');
 /* localstorage */
 var catStory = document.querySelector('.localstorage');
@@ -10438,6 +10442,10 @@ function emptyStorage() {
 	localStorage.clear();
 }
 
+// play/pause audio button event listeners
+play.addEventListener('click', playAudio);
+pause.addEventListener('click', stopAudio);
+
 // clear local storage button event listener
 clearStorageButton.addEventListener('click', clearStorage);
 // empty local storage button event listener
@@ -10493,6 +10501,10 @@ var volumeInput = document.querySelector('[name="volume"]');
 var rateInput = document.querySelector('[name="rate"]');
 var pitchInput = document.querySelector('[name="pitch"]');
 var audio = new Audio('assets/audio/06-Power-Animals.mp3');
+// audio play/pause buttons
+var play = document.querySelector('.play');
+var pause = document.querySelector('.pause');
+
 var image = document.querySelector('#blinds');
 /* localstorage */
 // grab textarea for local storage
@@ -10500,9 +10512,6 @@ var catStory = document.querySelector('.localstorage');
 var clearStorageButton = document.querySelector('.clear');
 var emptyStorageButton = document.querySelector('.empty');
 var storagequotamsg = document.getElementById('storagequota-msg');
-// audio buttons for mobile/touch
-var play = document.querySelector('.play');
-var pause = document.querySelector('pause');
 
 /* is speechSynthesis present in window */
 if ('speechSynthesis' in window) {
@@ -10535,6 +10544,9 @@ if (localStorage.getItem('autosave', catStory.value)) {
 	catStory.value = localStorage.getItem('autosave', catStory.value);
 }
 
+// play/pause audio button event listeners
+play.addEventListener('click', _textToSpeech.playAudio);
+pause.addEventListener('click', _textToSpeech.stopAudio);
 // clear local storage button event listener
 clearStorageButton.addEventListener('click', _textToSpeech.clearStorage);
 // empty local storage button event listener

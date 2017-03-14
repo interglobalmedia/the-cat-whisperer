@@ -496,6 +496,7 @@ body {
 	height: 100%;
 	padding-bottom: 56.5%;
 	margin: 0 auto;
+	background: black;
 }
 
 #blinds:after {
@@ -784,6 +785,29 @@ li {
 
 .no-cssanimations #blinds li span {
 	opacity: 1;
+}
+
+/* Audio (music) Play/Pause Button Styling */
+
+.audio-buttons {
+	margin: 20px auto 0;
+	text-align: center;
+}
+
+.play, .pause {
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	background: #8b636c;
+	padding: 10px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	box-shadow: 2px 2px 4px rgba(139,105,105, 0.9);
+}
+
+.play {
+	margin-right: 10px;
+	width: 70px;
 }
 
 /* Local Storage Styling */
