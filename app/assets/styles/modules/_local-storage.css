@@ -11,9 +11,16 @@
     margin: 8px;
 }
 
-.clear:hover, .empty:hover,
-.clear:focus, .empty:focus,
-.clear:active, .empty:active {
+.clear:hover, .empty:hover, #save:hover,
+.clear:focus, .empty:focus, #save:focus,
+.clear:active, .empty:active #save:active {
     color: #ffc600;
     cursor: pointer;
+}
+
+/* Save to File Button Styling */
+.file-save-button {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
 }

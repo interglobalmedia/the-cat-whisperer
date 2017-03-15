@@ -21,6 +21,14 @@ const clearStorageButton = document.querySelector('.clear');
 const emptyStorageButton = document.querySelector('.empty');
 const storagequotamsg = document.getElementById('storagequota-msg');
 
+/* For creating a text File for catStory textarea localstorage text for download */
+const fileDownloadButton = document.getElementById('save');
+
+/* localstorage text to downloadable file related */
+import { localStorageToFile, destroyClickedElement } from './modules/catStoryText';
+/* fileDownloadButton event listener */
+fileDownloadButton.addEventListener('click', localStorageToFile);
+
 /* is speechSynthesis present in window */
 if('speechSynthesis' in window) {
 	supportmsg.innerHTML = 'Your browser supports speech synthesis';
@@ -71,7 +79,5 @@ image.addEventListener('mouseleave', stopAudio);
 // audio event listeners on mobile/touch devices
 play.addEventListener('click', playAudio);
 pause.addEventListener('click', stopAudio);
-// speechSynthesis event listener
-window.speechSynthesis.addEventListener('onvoiceschanged', populateVoices);
 /* or can do toggle.bind(null, false). with bind, you take a function, call it in the context of null, and pass it an argument of false. That's so that toggle(false) does not automatically run on page load. */
 stopButton.addEventListener('click', () => toggle(false));
