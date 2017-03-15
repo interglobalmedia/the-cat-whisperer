@@ -134,9 +134,9 @@ image.addEventListener('mouseenter', playAudio);
 image.addEventListener('mouseleave', stopAudio);
 /* need explicit call to populateVoices() for Firefox and Safari. Happens after onvoiceschanged event returns populateVoices(); */
 populateVoices();
-/* when there is a change in voice selection, make a call to populateVoices(); This replaces the original speechSynthesis.addEventListener('voiceschanged', populatePopulateVoices). Because Safari was not able to evaluate it.
-This set up along with explicit call to populateVoices() not needed when application set in workflow. Instead, use
-window.speechSynthesis.addEventListener('onvoiceschanged', populateVoices); as implemented in app.js */
+/* When there is a change in voice selection, make a call to populateVoices(); This replaces the original speechSynthesis.addEventListener('voiceschanged', populatePopulateVoices). Because Safari was not able to evaluate it.
+This along with explicit call to populateVoices(). Removed call to speechSynthesis on window because it works without being placed in there, or so it seems. It also means that the error in Safari console no longer shows up. This must be because it is call to window, and therefore is picked up everywhere (which it is, ie if several browser windows are open at same time). */
+//window.speechSynthesis.addEventListener('onvoiceschanged', populateVoices);
 window.speechSynthesis.onvoiceschanged = (e) => populateVoices();
 /* event listener for speak (start) button. If there is a voice to select and it is selected, trigger text to speech.
 Not necessary when application set in workflow. Only toggle() function needed. */

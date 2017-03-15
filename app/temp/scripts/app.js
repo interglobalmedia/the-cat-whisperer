@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10303,6 +10303,51 @@ return jQuery;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+exports.localStorageToFile = localStorageToFile;
+exports.destroyClickedElement = destroyClickedElement;
+/* Creating a Text File for catStory textarea localstorage text for download */
+var fileDownloadButton = document.getElementById('save');
+
+function localStorageToFile() {
+	var csv = JSON.stringify(localStorage['autosave']);
+	var csvData = 'data:application/csv' + encodeURIComponent(csv);
+	var csvAsBlob = new Blob([csv], { type: 'text/pain' });
+	var fileNameToSaveAs = 'local-storage.txt';
+
+	var downloadLink = document.createElement('a');
+	downloadLink.download = fileNameToSaveAs;
+	downloadLink.innerHTML = 'Download File';
+	if (window.URL !== null) {
+		/* Chrome allows the link to be clicked without actually adding it to the DOM */
+		downloadLink.href = window.URL.createObjectURL(csvAsBlob);
+		downloadLink.target = '_blank';
+	} else {
+		downloadLink.href = window.URL.createObjectURL(csvAsBlob);
+		downloadLink.target = '_blank';
+		downloadLink.style.display = 'none';
+		document.body.appendChild(downloadLink);
+		downloadLink.onclick = destroyClickedElement;
+	}
+	downloadLink.click();
+}
+
+function destroyClickedElement(event) {
+	/* Remove the link from the DOM */
+	document.body.removeChild(event.target);
+}
+// file download button event listener
+fileDownloadButton.addEventListener('click', localStorageToFile);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 exports.populateVoices = populateVoices;
 exports.speak = speak;
 exports.toggle = toggle;
@@ -10455,9 +10500,9 @@ image.addEventListener('mouseenter', playAudio);
 image.addEventListener('mouseleave', stopAudio);
 /* need explicit call to populateVoices() for Firefox and Safari. Happens after onvoiceschanged event returns populateVoices(); */
 populateVoices();
-/* when there is a change in voice selection, make a call to populateVoices(); This replaces the original speechSynthesis.addEventListener('voiceschanged', populatePopulateVoices). Because Safari was not able to evaluate it.
-This set up along with explicit call to populateVoices() not needed when application set in workflow. Instead, use
-window.speechSynthesis.addEventListener('onvoiceschanged', populateVoices); as implemented in app.js */
+/* When there is a change in voice selection, make a call to populateVoices(); This replaces the original speechSynthesis.addEventListener('voiceschanged', populatePopulateVoices). Because Safari was not able to evaluate it.
+This along with explicit call to populateVoices(). Removed call to speechSynthesis on window because it works without being placed in there, or so it seems. It also means that the error in Safari console no longer shows up. This must be because it is call to window, and therefore is picked up everywhere (which it is, ie if several browser windows are open at same time). */
+//window.speechSynthesis.addEventListener('onvoiceschanged', populateVoices);
 window.speechSynthesis.onvoiceschanged = function (e) {
 	return populateVoices();
 };
@@ -10475,9 +10520,9 @@ stopButton.addEventListener('click', function () {
 });
 
 /***/ }),
-/* 2 */,
 /* 3 */,
-/* 4 */
+/* 4 */,
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10487,7 +10532,9 @@ var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _textToSpeech = __webpack_require__(1);
+var _catStoryText = __webpack_require__(1);
+
+var _textToSpeech = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10512,6 +10559,14 @@ var catStory = document.querySelector('.localstorage');
 var clearStorageButton = document.querySelector('.clear');
 var emptyStorageButton = document.querySelector('.empty');
 var storagequotamsg = document.getElementById('storagequota-msg');
+
+/* For creating a text File for catStory textarea localstorage text for download */
+var fileDownloadButton = document.getElementById('save');
+
+/* localstorage text to downloadable file related */
+
+/* fileDownloadButton event listener */
+fileDownloadButton.addEventListener('click', _catStoryText.localStorageToFile);
 
 /* is speechSynthesis present in window */
 if ('speechSynthesis' in window) {
@@ -10559,8 +10614,6 @@ image.addEventListener('mouseleave', _textToSpeech.stopAudio);
 // audio event listeners on mobile/touch devices
 play.addEventListener('click', _textToSpeech.playAudio);
 pause.addEventListener('click', _textToSpeech.stopAudio);
-// speechSynthesis event listener
-window.speechSynthesis.addEventListener('onvoiceschanged', _textToSpeech.populateVoices);
 /* or can do toggle.bind(null, false). with bind, you take a function, call it in the context of null, and pass it an argument of false. That's so that toggle(false) does not automatically run on page load. */
 stopButton.addEventListener('click', function () {
 	return (0, _textToSpeech.toggle)(false);
