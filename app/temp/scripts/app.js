@@ -10501,7 +10501,7 @@ image.addEventListener('mouseleave', stopAudio);
 /* need explicit call to populateVoices() for Firefox and Safari. Happens after onvoiceschanged event returns populateVoices(); */
 populateVoices();
 /* When there is a change in voice selection, make a call to populateVoices(); This replaces the original speechSynthesis.addEventListener('voiceschanged', populatePopulateVoices). Because Safari was not able to evaluate it.
-This along with explicit call to populateVoices(). Removed call to speechSynthesis on window because it works without being placed in there, or so it seems. It also means that the error in Safari console no longer shows up. This must be because it is call to window, and therefore is picked up everywhere (which it is, ie if several browser windows are open at same time). */
+This along with explicit call to populateVoices(). Removed call to speechSynthesis on window because it works without being placed in app.js, or so it seems. It also means that the error in Safari console no longer shows up. This must be because it is call to window, and therefore is picked up everywhere (which it is, ie if several browser windows are open at same time). */
 //window.speechSynthesis.addEventListener('onvoiceschanged', populateVoices);
 window.speechSynthesis.onvoiceschanged = function (e) {
 	return populateVoices();
