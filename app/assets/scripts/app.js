@@ -25,7 +25,7 @@ const storagequotamsg = document.getElementById('storagequota-msg');
 const fileDownloadButton = document.getElementById('save');
 
 /* localstorage text to downloadable file related */
-import { localStorageToFile, destroyClickedElement } from './modules/catStoryText';
+import { localStorageToFile } from './modules/catStoryText';
 /* fileDownloadButton event listener */
 fileDownloadButton.addEventListener('click', localStorageToFile);
 
