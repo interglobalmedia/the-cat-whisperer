@@ -10311,7 +10311,7 @@ function localStorageToFile() {
 	var csv = JSON.stringify(localStorage['autosave']);
 	var csvAsBlob = new Blob([csv], { type: 'text/plain' });
 	var fileNameToSaveAs = 'local-storage.txt';
-	/* this way instead of createElement('a') because otherwise won't work in Firefox. Only Safari and Chrom. */
+	/* this way instead of createElement('a') because otherwise won't work in Firefox. Only Safari and Chrome. */
 	var downloadLink = document.getElementById('save');
 	downloadLink.download = fileNameToSaveAs;
 	if (window.URL !== null) {
