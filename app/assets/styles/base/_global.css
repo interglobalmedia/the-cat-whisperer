@@ -20,3 +20,10 @@ body {
 	overflow-x: hidden;
 	cursor: pointer;
 }
+
+/* Get rid of User Agent blue color for links in Chrome, Safari, and Firefox */
+
+a:-webkit-any-link,
+*|*:link {
+	color: #ffc600;
+}

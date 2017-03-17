@@ -482,6 +482,13 @@ body {
 	cursor: pointer;
 }
 
+/* Get rid of User Agent blue color for links in Chrome, Safari, and Firefox */
+
+a:-webkit-any-link,
+*|*:link {
+	color: #ffc600;
+}
+
 /* Venetian Blinds Styling */
 
 .wrap {
@@ -823,6 +830,11 @@ li {
 
 .clear, .empty {
     margin: 8px;
+}
+
+#save:active,
+#save:visited {
+    color: red;
 }
 
 .clear:hover, .empty:hover, #save:hover,
