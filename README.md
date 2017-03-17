@@ -1,4 +1,4 @@
-# Venetian Blinds Gallery
+# The Cat Whisperer
 
 This is a project in which I merge together my `Cat Whisperer` project, `Speech Synthesis`, `audio`, and a cool image fader animation effect I'm applying to my images of Percy.
 
