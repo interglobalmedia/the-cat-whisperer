@@ -159,6 +159,10 @@ self.__precacheManifest = [
     "url": "dist/Photo-Nov-09-09-42-04--1000.jpg"
   },
   {
+    "revision": "42296853d237c545a199386900713568",
+    "url": "dist/Photo-Nov-09-09-16-34--1000.jpg"
+  },
+  {
     "revision": "e62d9d16d70b9ac13971fe3ee78b48d1",
     "url": "dist/Photo-Nov-09-09-29-05.jpg"
   },
@@ -193,10 +197,6 @@ self.__precacheManifest = [
   {
     "revision": "c74302e3268992748974eef55087cb6e",
     "url": "dist/Photo-Nov-09-09-41-29.jpg"
-  },
-  {
-    "revision": "42296853d237c545a199386900713568",
-    "url": "dist/Photo-Nov-09-09-16-34--1000.jpg"
   },
   {
     "revision": "cc6230200164eb8005c333a2bee10322",
