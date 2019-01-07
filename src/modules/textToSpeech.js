@@ -8,12 +8,13 @@ const voiceSelect = document.querySelector('#voice')
 let volumeInput = document.querySelector('[name="volume"]')
 let rateInput = document.querySelector('[name="rate"]')
 let pitchInput = document.querySelector('[name="pitch"]')
-const audio = new Audio('../audio/06-Power-Animals.mp3')
+const PowerAnimals = require('../audio/06-Power-Animals.mp3');
+const audio = new Audio(PowerAnimals);
 // audio play/pause buttons
 const play = document.querySelector('.play')
 const pause = document.querySelector('.pause')
 
-const image = document.querySelector('#blinds')
+const image = document.querySelector('#blinds span')
 /* localstorage */
 const catStory = document.querySelector('.localstorage')
 const clearStorageButton = document.querySelector('.clear')
@@ -73,12 +74,12 @@ export function toggle(startOver = true) {
 }
 // play music
 export function playAudio() {
-	audio.play()
+	audio.play('../audio/06-Power-Animals.mp3')
 }
 
 // stop music
 export function stopAudio() {
-	audio.pause()
+	audio.pause('../audio/06-Power-Animals.mp3')
 }
 
 // check for local storage

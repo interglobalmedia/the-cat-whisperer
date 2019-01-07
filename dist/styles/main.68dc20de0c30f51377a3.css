@@ -1,0 +1,500 @@
+/* Media Query Variables */
+/* Global Styling */
+html {
+  -webkit-boz-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-boxsizing: inherit;
+  -ms-box-sizing: inherit;
+  box-sizing: inherit; }
+
+body {
+  margin: 0;
+  padding-top: 0;
+  background: #cd9b9b;
+  font-family: 'Pacifico', cursive;
+  overflow-x: hidden;
+  cursor: pointer; }
+
+/* Get rid of User Agent blue color for links in Chrome, Safari, and Firefox */
+a:-webkit-any-link,
+*|*:link {
+  color: #ffc600; }
+
+/* Clearfix */
+/* Venetian Blinds Styling */
+.wrap {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto; }
+
+#blinds {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 56.5%;
+  margin: 0 auto;
+  background: black; }
+
+#blinds:after {
+  background: transparent url(src/images/pattern.[hash8].png) repeat top left; }
+
+li {
+  list-style: none; }
+
+#blinds li span {
+  position: absolute;
+  box-shadow: 0px 2px 5px 5px rgba(139, 119, 101, 0.2);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  -webkit-animation: fader 78s infinite 0s;
+          animation: fader 78s infinite 0s; }
+
+#blinds li div {
+  z-index: 1000;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  opacity: 0;
+  color: thistle;
+  -webkit-animation: titleAnimation 78s linear infinite 0s;
+          animation: titleAnimation 78s linear infinite 0s; }
+
+#blinds li div h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  padding: 0;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 4px #8b636c; }
+  @media (min-width: 530px) {
+    #blinds li div h3 {
+      font-size: 24px; } }
+  @media (min-width: 530px) and (min-width: 768px) {
+    #blinds li div h3 {
+      font-size: 32px; } }
+
+#blinds li:nth-child(1) span {
+  background-image: url(src/images/Photo-Nov-09-09-16-34--2000.[hash8].jpg);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+
+#blinds li:nth-child(2) span {
+  background-image: url(src/images/Photo-Nov-09-09-27-54--2000.[hash8].jpg);
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s; }
+
+#blinds li:nth-child(3) span {
+  background-image: url(src/images/Photo-Nov-09-09-28-54--2000.[hash8].jpg);
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s; }
+
+#blinds li:nth-child(4) span {
+  background-image: url(src/images/Photo-Nov-09-09-28-56--2000.[hash8].jpg);
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s; }
+
+#blinds li:nth-child(5) span {
+  background-image: url(src/images/Photo-Nov-09-09-28-59--2000.[hash8].jpg);
+  -webkit-animation-delay: 24s;
+          animation-delay: 24s; }
+
+#blinds li:nth-child(6) span {
+  background-image: url(src/images/Photo-Nov-09-09-29-05--2000.[hash8].jpg);
+  -webkit-animation-delay: 30s;
+          animation-delay: 30s; }
+
+#blinds li:nth-child(7) span {
+  background-image: url(src/images/Photo-Nov-09-09-29-08--2000.[hash8].jpg);
+  -webkit-animation-delay: 36s;
+          animation-delay: 36s; }
+
+#blinds li:nth-child(8) span {
+  background-image: url(src/images/Photo-Nov-09-09-29-25--2000.[hash8].jpg);
+  -webkit-animation-delay: 42s;
+          animation-delay: 42s; }
+
+#blinds li:nth-child(9) span {
+  background-image: url(src/images/Photo-Nov-09-09-41-29--2000.[hash8].jpg);
+  -webkit-animation-delay: 48s;
+          animation-delay: 48s; }
+
+#blinds li:nth-child(10) span {
+  background-image: url(src/images/Photo-Nov-09-09-42-02--2000.[hash8].jpg);
+  -webkit-animation-delay: 54s;
+          animation-delay: 54s; }
+
+#blinds li:nth-child(11) span {
+  background-image: url(src/images/Photo-Nov-09-09-42-04--2000.[hash8].jpg);
+  -webkit-animation-delay: 60s;
+          animation-delay: 60s; }
+
+#blinds li:nth-child(12) span {
+  background-image: url(src/images/Photo-Nov-09-09-42-12--2000.[hash8].jpg);
+  -webkit-animation-delay: 66s;
+          animation-delay: 66s; }
+
+#blinds li:nth-child(1) div {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+
+#blinds li:nth-child(2) div {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s; }
+
+#blinds li:nth-child(2) div {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  bottom: 90px; }
+
+#blinds li:nth-child(3) div {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+  bottom: 90px; }
+
+#blinds li:nth-child(4) div {
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+  bottom: 90px; }
+
+#blinds li:nth-child(5) div {
+  -webkit-animation-delay: 24s;
+          animation-delay: 24s;
+  bottom: 90px; }
+
+#blinds li:nth-child(6) div {
+  -webkit-animation-delay: 30s;
+          animation-delay: 30s;
+  bottom: 90px; }
+
+#blinds li:nth-child(7) div {
+  -webkit-animation-delay: 36s;
+          animation-delay: 36s;
+  bottom: 90px; }
+
+#blinds li:nth-child(8) div {
+  -webkit-animation-delay: 42s;
+          animation-delay: 42s;
+  bottom: 90px; }
+
+#blinds li:nth-child(9) div {
+  -webkit-animation-delay: 48s;
+          animation-delay: 48s; }
+
+#blinds li:nth-child(10) div {
+  -webkit-animation-delay: 54s;
+          animation-delay: 54s; }
+
+#blinds li:nth-child(11) div {
+  -webkit-animation-delay: 60s;
+          animation-delay: 60s; }
+
+#blinds li:nth-child(12) div {
+  -webkit-animation-delay: 66s;
+          animation-delay: 66s; }
+
+@-webkit-keyframes fader {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  8% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  17% {
+    opacity: 1; }
+  25% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fader {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  8% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  17% {
+    opacity: 1; }
+  25% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes titleAnimation {
+  0% {
+    opacity: 0; }
+  6% {
+    opacity: 0; }
+  16% {
+    opacity: 1; }
+  17% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+@keyframes titleAnimation {
+  0% {
+    opacity: 0; }
+  6% {
+    opacity: 0; }
+  16% {
+    opacity: 1; }
+  17% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+/* for browsers that don't support animations, show last slideshow image by setting the opacity to 1 */
+.no-cssanimations #blinds li span {
+  opacity: 1; }
+
+/* Audio (music) Play/Pause Button Styling */
+.audio-buttons {
+  margin: 20px auto 0;
+  text-align: center; }
+
+.play, .pause {
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  background: #8b636c;
+  padding: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(139, 105, 105, 0.9); }
+
+.play {
+  margin-right: 10px;
+  width: 70px; }
+
+/* Local Storage Styling */
+/* Clear and Empty Links */
+.storage-buttons {
+  text-align: center;
+  margin: 30px auto;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold; }
+
+.clear, .empty {
+  margin: 8px; }
+
+.clear:hover, .empty:hover, #save:hover,
+.clear:focus, .empty:focus, #save:focus,
+.clear:active, .empty:active #save:active {
+  color: #ffc600;
+  cursor: pointer; }
+
+/* Save to File Button Styling */
+.file-save-button {
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold; }
+
+/* speech Styling */
+.voiceinator {
+  padding: 2rem;
+  max-width: 50rem;
+  width: 100%;
+  margin: 15% auto;
+  border-radius: 1rem;
+  position: relative;
+  background: #8b636c;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1); }
+  .voiceinator .voiceinator-title {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2.75rem;
+    border-bottom: 5px solid #cd9b9b;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 2px 2px 0 #cd9b9b;
+    text-align: center; }
+    @media (min-width: 530px) {
+      .voiceinator .voiceinator-title {
+        font-size: 3.5rem; } }
+    @media (min-width: 768px) {
+      .voiceinator .voiceinator-title {
+        width: calc(100% + 4rem);
+        margin: 0;
+        margin-left: -2rem;
+        margin-top: -2rem;
+        margin-bottom: 2rem;
+        padding: 5rem;
+        background: #8b636c;
+        border-bottom: 5px solid #cd9b9b;
+        font-size: 5rem;
+        font-weight: 100;
+        font-family: 'Pacifico', cursive;
+        text-shadow: 3px 3px 0 #cd9b9b; } }
+
+#support-msg {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  line-height: 1.7;
+  margin-bottom: 20px; }
+
+label {
+  font-size: 20px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  line-height: 1.7; }
+
+.voiceinator input,
+.voiceinator button,
+.voiceinator select,
+.voiceinator textarea {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border: 0;
+  font-size: 2rem;
+  font-family: 'Roboto Slab', serif;
+  background: #F7F7F7;
+  outline: 0;
+  letter-spacing: 0.1em; }
+
+.voiceinator select {
+  border-radius: 5px; }
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+textarea {
+  height: 20rem; }
+
+.voiceinator button {
+  background: #bc8f8f;
+  border: 0;
+  width: 49%;
+  float: left;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 0;
+  font-size: 2rem;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  line-height: 1.7; }
+
+.voiceinator button:active {
+  top: 2px; }
+
+.voiceinator button:nth-of-type(1) {
+  margin-right: 2%; }
+
+/* unholy css to style input type="range" */
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+  width: 100%;
+  margin: 8px 0; }
+
+input[type=range]:focus {
+  outline: none; }
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0); }
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background: #ffc600;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); }
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ffc600; }
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  border: 0;
+  background: #ffc600;
+  margin-top: -10px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer; }
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+  background: #fff;
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0); }
+
+/* New addition to removal of User Agent StyleSheet for Firefox. Removed dotted border around range. */
+input[type="range"]::-moz-focus-outer {
+  border: 0; }
+
+/* Sticky Footer Styling for Extra High Devices (ie Kindle Fire HD) */
+/* Sticky Footer */
+:root {
+  --space: 1.5em 0;
+  --space-lg: 2em 0; }
+
+.Site {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 100vh; }
+
+.Site-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 0 auto;
+  padding: var(--space) 0 0; }
+
+.Site-content::after {
+  content: '\00a0';
+  display: block;
+  margin-top: var(--space);
+  height: 0;
+  visibility: hidden; }
+
+/* End Sticky Footer */
+.footer p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+

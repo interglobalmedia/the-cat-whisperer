@@ -9,7 +9,7 @@ const voiceSelect = document.querySelector('#voice');
 let volumeInput = document.querySelector('[name="volume"]');
 let rateInput = document.querySelector('[name="rate"]');
 let pitchInput = document.querySelector('[name="pitch"]');
-const audio = new Audio('/audio/06-Power-Animals.mp3');
+const audio = new Audio('./audio/06-Power-Animals.mp3');
 // audio play/pause buttons
 const play = document.querySelector('.play');
 const pause = document.querySelector('.pause');
