@@ -3,20 +3,27 @@
         "browser": true,
         "commonjs": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "serviceworker": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["prettier"],
     "parserOptions": {
+        "ecmaVersion": 2018,
         "sourceType": "module"
     },
+    "plugins": [
+        "import",
+        "prettier"
+    ],
     "rules": {
+        "no-unused-vars": 0,
+        "no-console": 0,
         "indent": [
-            "error",
-            "tab"
+            0
         ],
         "linebreak-style": [
-            "error",
-            "unix"
+            "off",
+            "eol-last"
         ],
         "quotes": [
             0
@@ -24,5 +31,14 @@
         "semi": [
             0
         ]
+    },
+    "globals": {
+        "window": true,
+        "document": true,
+        "localStorage": true,
+        "FormData": true,
+        "FileReader": true,
+        "Blob": true,
+        "navigator": true
     }
 }

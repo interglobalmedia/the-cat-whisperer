@@ -1,0 +1,39 @@
+/* Global Styling */
+html {
+	-webkit-boz-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	-webkit-boxsizing: inherit;
+	-moz-box-sizing: inherit;
+	-ms-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding-top: 0;
+	background: $mainRosyBrown3;
+	font-family: 'Pacifico', cursive;
+	overflow-x: hidden;
+	cursor: pointer;
+}
+
+/* Get rid of User Agent blue color for links in Chrome, Safari, and Firefox */
+
+a:-webkit-any-link,
+*|*:link {
+	color: #ffc600;
+}
+
+/* Clearfix */
+
+%clearfix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
