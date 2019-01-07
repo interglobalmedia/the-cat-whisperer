@@ -1,5 +1,6 @@
 /* Creating a Text File for catStory textarea localstorage text for download */
 const fileDownloadButton = document.getElementById('save')
+const catStory = document.querySelector('.localstorage').value;
 
 export function localStorageToFile() {
 	const csv = JSON.stringify(localStorage['autosave'])
@@ -21,7 +22,6 @@ export function localStorageToFile() {
 		document.body.appendChild(downloadLink.download)
 
 	}
-	downloadLink.click()
 }
 
 // file download button event listener

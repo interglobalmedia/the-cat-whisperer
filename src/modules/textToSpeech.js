@@ -1,4 +1,4 @@
-import $ from 'jquery'
+
 /* Speech Synthesis */
 const supportmsg = document.getElementById('support-msg')
 const speakButton = document.querySelector('#speak')
@@ -8,7 +8,7 @@ const voiceSelect = document.querySelector('#voice')
 let volumeInput = document.querySelector('[name="volume"]')
 let rateInput = document.querySelector('[name="rate"]')
 let pitchInput = document.querySelector('[name="pitch"]')
-const audio = new Audio('assets/audio/06-Power-Animals.mp3')
+const audio = new Audio('../audio/06-Power-Animals.mp3')
 // audio play/pause buttons
 const play = document.querySelector('.play')
 const pause = document.querySelector('.pause')
@@ -94,20 +94,21 @@ if(!localStorageSupport) {
 	try {
 		// set interval and autosave every second
 		setInterval(() => {
-			localStorage.setItem('autosave', catStory.value)
-		}, 1000)
+			localStorage.setItem('autosave', catStory.value);
+		}, 1000);
 	} catch(domException) {
 		if(domException.name === 'QUOTA_EXCEEDED_ERR' || domException.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
-			storagequotamsg.innerHTML = 'Local Storage Quota Exceeded!'
+			storagequotamsg.innerHTML = 'Local Storage Quota Exceeded!';
 		}
 	}
 }
-
 
 // if there is data available
 if(localStorage.getItem('autosave', catStory.value)) {
 	// retrieve item
 	catStory.value = localStorage.getItem('autosave', catStory.value)
+} else {
+	localStorage.setItem('autosave', catStory.value);
 }
 
 // clear local storage
