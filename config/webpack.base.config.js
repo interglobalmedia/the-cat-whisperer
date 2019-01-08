@@ -53,11 +53,20 @@ module.exports = env => {
                     ]
                 },
                 {
-                    test: /\.(jpg|png|gif|svg|pdf|ico|mp3)$/,
+                    test: /\.(jpg|png|gif|svg|pdf|ico)$/,
                     use: [{
                         loader: 'file-loader',
                         options: {
-                            name: '[path][name].[hash8].[ext]'
+                            name: 'images/[name].[ext]'
+                        }
+                    }]
+                },
+                {
+                    test: /\.(mp3)$/,
+                    use: [{
+                        loader: 'file-loader',
+                        options: {
+                            name: 'audio/[name].[ext]'
                         }
                     }]
                 }
@@ -75,8 +84,6 @@ module.exports = env => {
                 filename: PLATFORM === 'production' ? 'styles/[name].[hash].css' : '[name].css'
             }),
             new CopyWebpackPlugin([
-                {from: 'src/images', to: 'images'},
-                {from: 'src/audio', to: 'audio'},
                 {from: 'src/static'}
             ]),
             new WorkboxPlugin.GenerateSW({
