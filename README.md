@@ -7,4 +7,6 @@ January 8, 2019: A lot has happened in terms of JS workflows since I created thi
 
 So I have applied an adaptation of my latest React workflow using Webpack 4 and Babel 7 to this application. A whole new set of tools for automation!
 
-I also wrote a quick piece on my experience refacoring this app (yesterday) that is available for your reading pleasure on my Developer Blog. To read the post, please visit [Refactoring your JS workflow when your images are in your CSS only](http://www.mariadcampbell.com/2019/01/08/refactoring-your-js-workflow-when-your-images-are-in-your-css-only/) on my [Developer Blog](http://www.mariadcampbell.com).
+I also replaced local storage with session storage. You can learn more about why on my Portfolio Site: [CatWhisperer App on my Portfolio Site](https://interglobalmedia.github.io/portfolio/#/work/cat-whisperer-app)
+
+I also wrote a quick piece on my experience refactoring this app (yesterday) that is available for your reading pleasure on my **Developer Blog**. To read the post, please visit [Refactoring your JS workflow when your images are in your CSS only](http://www.mariadcampbell.com/2019/01/08/refactoring-your-js-workflow-when-your-images-are-in-your-css-only/) on my [Developer Blog](http://www.mariadcampbell.com).
