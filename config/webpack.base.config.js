@@ -57,7 +57,8 @@ module.exports = env => {
                     use: [{
                         loader: 'file-loader',
                         options: {
-                            name: 'images/[name].[ext]'
+                            name: '[name].[ext]',
+                            outputPath: 'images/'
                         }
                     }]
                 },
@@ -66,7 +67,8 @@ module.exports = env => {
                     use: [{
                         loader: 'file-loader',
                         options: {
-                            name: 'audio/[name].[ext]'
+                            name: '[name].[ext]',
+                            outputPath: 'audio/'
                         }
                     }]
                 }
