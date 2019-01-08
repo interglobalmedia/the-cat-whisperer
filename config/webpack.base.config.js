@@ -74,10 +74,11 @@ module.exports = env => {
             new MiniCssExtractPlugin({
                 filename: PLATFORM === 'production' ? 'styles/[name].[hash].css' : '[name].css'
             }),
-            new CopyWebpackPlugin([{
-                from: 'src/images', to: 'images',
-                from: 'src/audio', to: 'audio'
-            }]),
+            new CopyWebpackPlugin([
+                {from: 'src/images', to: 'images'},
+                {from: 'src/audio', to: 'audio'},
+                {from: 'src/static'}
+            ]),
             new WorkboxPlugin.GenerateSW({
                 swDest: 'sw.js'
             }),
