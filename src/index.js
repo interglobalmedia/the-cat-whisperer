@@ -1,4 +1,4 @@
-import './styles/styles.scss';
+import './styles.scss';
 
 /* Speech Synthesis */
 const supportmsg = document.getElementById('support-msg');

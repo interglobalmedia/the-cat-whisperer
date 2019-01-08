@@ -57,8 +57,8 @@ module.exports = env => {
                     use: [{
                         loader: 'file-loader',
                         options: {
-                            name: '[name].[ext]',
-                            outputPath: 'images/'
+                            name: 'images/[name].[ext]',
+                            path: path.resolve(__dirname, '..', 'dist')
                         }
                     }]
                 },
@@ -67,8 +67,7 @@ module.exports = env => {
                     use: [{
                         loader: 'file-loader',
                         options: {
-                            name: '[name].[ext]',
-                            outputPath: 'audio/'
+                            name: 'audio/[name].[ext]'
                         }
                     }]
                 }
@@ -79,11 +78,11 @@ module.exports = env => {
             new CleanWebpackPlugin(['dist']),
             new HtmlWebpackPlugin({
                 template: 'src/index.html',
-                styles: 'src/styles/styles.css',
+                styles: 'src/styles.css',
                 inject: true
             }),
             new MiniCssExtractPlugin({
-                filename: PLATFORM === 'production' ? 'styles/[name].[hash].css' : '[name].css'
+                filename: PLATFORM === 'production' ? '[name].[hash].css' : '[name].css'
             }),
             new CopyWebpackPlugin([
                 {from: 'src/static'}
