@@ -15,8 +15,8 @@ const play = document.querySelector('.play')
 const pause = document.querySelector('.pause')
 
 const image = document.querySelector('#blinds span')
-/* localstorage */
-const catStory = document.querySelector('.localstorage')
+/* sessionstorage */
+const catStory = document.querySelector('.sessionstorage')
 const clearStorageButton = document.querySelector('.clear')
 const emptyStorageButton = document.querySelector('.empty')
 const storagequotamsg = document.getElementById('storagequota-msg')
@@ -83,19 +83,19 @@ export function stopAudio() {
 }
 
 // check for local storage
-export function localStorageSupport() {
+export function sessionStorageSupport() {
 	return typeof(Storage) !== 'undefined'
 }
 
 // run detection with inverted expression
-if(!localStorageSupport) {
-	// change value to inform visitor of no local storage support
-	storagequotamsg.innerHTML = 'Sorry. No HTML5 local storage support here.'
+if(!sessionStorageSupport) {
+	// change value to inform visitor of no session storage support
+	storagequotamsg.innerHTML = 'Sorry. No HTML5 session storage support here.'
 } else {
 	try {
 		// set interval and autosave every second
 		setInterval(() => {
-			localStorage.setItem('autosave', catStory.value);
+			sessionStorage.setItem('autosave', catStory.value);
 		}, 1000);
 	} catch(domException) {
 		if(domException.name === 'QUOTA_EXCEEDED_ERR' || domException.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
@@ -105,31 +105,31 @@ if(!localStorageSupport) {
 }
 
 // if there is data available
-if(localStorage.getItem('autosave', catStory.value)) {
+if(sessionStorage.getItem('autosave', catStory.value)) {
 	// retrieve item
-	catStory.value = localStorage.getItem('autosave', catStory.value)
+	catStory.value = sessionStorage.getItem('autosave', catStory.value)
 } else {
-	localStorage.setItem('autosave', catStory.value);
+	sessionStorage.setItem('autosave', catStory.value);
 }
 
-// clear local storage
+// clear session storage
 export function clearStorage() {
 	catStory.value = ''
-	localStorage.removeItem('autosave', catStory.value)
+	sessionStorage.removeItem('autosave', catStory.value)
 }
-// empty local storage
+// empty session storage
 export function emptyStorage() {
 	catStory.value = ''
-	localStorage.clear()
+	sessionStorage.clear()
 }
 
 // play/pause audio button event listeners
 play.addEventListener('click', playAudio)
 pause.addEventListener('click', stopAudio)
 
-// clear local storage button event listener
+// clear session storage button event listener
 clearStorageButton.addEventListener('click', clearStorage)
-// empty local storage button event listener
+// empty session storage button event listener
 emptyStorageButton.addEventListener('click', emptyStorage)
 // audio event listeners
 image.addEventListener('mouseenter', playAudio)

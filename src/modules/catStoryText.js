@@ -1,11 +1,11 @@
-/* Creating a Text File for catStory textarea localstorage text for download */
+/* Creating a Text File for catStory textarea sessionstorage text for download */
 const fileDownloadButton = document.getElementById('save')
-const catStory = document.querySelector('.localstorage').value;
+const catStory = document.querySelector('.sessionstorage').value;
 
-export function localStorageToFile() {
-	const csv = JSON.stringify(localStorage['autosave'])
+export function sessionStorageToFile() {
+	const csv = JSON.stringify(sessionStorage['autosave'])
 	const csvAsBlob = new Blob([csv], {type: 'text/plain'})
-	const fileNameToSaveAs = 'local-storage.txt'
+	const fileNameToSaveAs = 'session-storage.txt'
 	/* this way instead of createElement('a') because otherwise won't work in Firefox. Only Safari and Chrome. */
 	const downloadLink = document.getElementById('save')
 	downloadLink.download = fileNameToSaveAs
@@ -25,4 +25,4 @@ export function localStorageToFile() {
 }
 
 // file download button event listener
-fileDownloadButton.addEventListener('click', localStorageToFile)
+fileDownloadButton.addEventListener('click', sessionStorageToFile)
