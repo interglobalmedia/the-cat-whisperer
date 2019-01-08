@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -84,9 +83,6 @@ module.exports = env => {
             new MiniCssExtractPlugin({
                 filename: PLATFORM === 'production' ? '[name].[hash].css' : '[name].css'
             }),
-            new CopyWebpackPlugin([
-                {from: 'src/static'}
-            ]),
             new WorkboxPlugin.GenerateSW({
                 swDest: 'sw.js'
             }),
